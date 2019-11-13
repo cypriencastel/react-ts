@@ -21,6 +21,9 @@ const DefaultLayout: React.FC = function () {
                     <PokemonList />
                 </Route>
                 <Route path="/pokemon/:id" children={<PokemonPage />}></Route>
+                <Route path="*">
+                    <NotFound />
+                </Route>
             </Switch>
         </Router>
     );    
@@ -38,7 +41,7 @@ function PokemonPage() {
 
     if (pokemon === null) {
 
-        return (<NotFound />)
+        return (<Pokemon pokemon={require('../Data/missingno.json')} />)
     }
 
     return (<Pokemon pokemon={pokemon} />)
