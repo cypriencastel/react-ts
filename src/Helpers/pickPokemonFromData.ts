@@ -2,10 +2,11 @@ import PokemonInterface from '../Interfaces/Pokemon'
 
 export default function (id: number): PokemonInterface|null {
     const pokemonData: Array<PokemonInterface> = require('../Data/pokemon.json')
+    const pokId = id - 1;
 
-    if (pokemonData[id]) {
+    if (pokemonData[pokId]) {
 
-        return pokemonData[id]
+        return pokemonData[pokId]
     } else {
 
         return null
